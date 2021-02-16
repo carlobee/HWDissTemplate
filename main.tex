@@ -1,0 +1,75 @@
+%--------------------- PACKAGES ---------------------%
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{titlesec}
+
+\usepackage{float}
+
+\usepackage[bottom]{footmisc}
+
+\usepackage{hyperref}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{caption}
+\captionsetup{font=footnotesize}
+
+% insert line break in table cell %
+\usepackage{makecell}
+
+% center columns %
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\usepackage{tgtermes}
+
+% remove auto indents
+\usepackage{parskip}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% frame images %
+\usepackage[export]{adjustbox}
+
+
+%--------------------- DOCUMENT ---------------------%
+
+\begin{document}
+\pagenumbering{roman}
+
+\input{01_title.tex}
+\newpage
+\input{02_declaration.tex}
+\newpage
+\input{03_acknowledgments.tex}
+\newpage
+\begin{spacing}{1.9}
+\input{04_abstract.tex}
+\end{spacing}
+\newpage
+\tableofcontents
+\newpage
+\begin{spacing}{1.9}
+\pagenumbering{arabic}
+\input{05_template_section.tex}
+
+% continue to add your own section's... %
+
+\end{spacing}
+\newpage
+\bibliographystyle{plain}
+\bibliography{references.bib}
+\end{document}
